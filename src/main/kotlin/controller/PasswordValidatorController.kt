@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import processor.PasswordValidatorProcessor
 import java.awt.PageAttributes
-import java.lang.Exception
+import java.lang.Exception as Exception1
 
 
 @RestController
@@ -18,10 +18,11 @@ class PasswordValidatorController @Autowired constructor(private val service: Pa
         value = ["validatePassword"],
         produces = [MediaType.APPLICATION_JSON_VALUE]
     )
-    fun getValidatePassword(@RequestParam("password") password: String): ResponseEntity<Boolean>{
+    fun getValidatePassword(@RequestParam("password") password: String): ResponseEntity<Boolean> {
         return try {
-            ResponseEntity.ok(service.validate(password))
-        }catch (e: Exception){
+            val isValid = service.validate(password)
+            ResponseEntity(isValid, if (!isValid) HttpStatus.BAD_REQUEST else HttpStatus.OK)
+        } catch (e: Exception){
             ResponseEntity.status(HttpStatus.BAD_REQUEST).build()
         }
     }

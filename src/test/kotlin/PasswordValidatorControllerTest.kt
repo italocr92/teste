@@ -27,4 +27,14 @@ class PasswordValidatorControllerTest {
         assertEquals(HttpStatus.OK, response.statusCode)
     }
 
+    @Test
+    fun `should return bad request and false when valid password`(){
+        every { passwordValidatorProcessor.validate(any()) } returns false
+
+        val response = passwordController.getValidatePassword("invalid_password")
+
+        assertNotNull(response)
+        assertEquals(HttpStatus.BAD_REQUEST, response.statusCode)
+    }
+
 }
