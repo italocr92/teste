@@ -11,7 +11,7 @@ class PasswordValidatorProcessor @Autowired constructor(
     PasswordValidatorProcessorInterface {
 
     override fun validate(password: String): Boolean {
-        return passwordValidatorInterface.all { it -> it.isValid(password) }
+        return passwordValidatorInterface.all{it -> it.isValid(password)}
     }
 
 }

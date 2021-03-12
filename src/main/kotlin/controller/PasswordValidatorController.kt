@@ -22,7 +22,7 @@ class PasswordValidatorController @Autowired constructor(private val service: Pa
         return try {
             ResponseEntity.ok(service.validate(password))
         }catch (e: Exception){
-            ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
+            ResponseEntity.status(HttpStatus.BAD_REQUEST).build()
         }
     }
 }
