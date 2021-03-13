@@ -1,10 +1,9 @@
-import controller.PasswordValidatorController
+import com.spring.teste.controller.PasswordValidatorController
+import com.spring.teste.processor.PasswordValidatorProcessor
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.jupiter.api.BeforeEach
 import org.springframework.http.HttpStatus
-import org.springframework.http.ResponseEntity
-import processor.PasswordValidatorProcessor
 import kotlin.test.*
 
 class PasswordValidatorControllerTest {

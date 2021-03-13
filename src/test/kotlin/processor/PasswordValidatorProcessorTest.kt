@@ -1,11 +1,12 @@
 package processor
 
+import com.spring.teste.processor.PasswordValidatorProcessor
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.BeforeEach
-import services.PasswordValidatorInterface
+import com.spring.teste.services.PasswordValidatorInterface
 import kotlin.test.Test
 import kotlin.test.assertTrue
 

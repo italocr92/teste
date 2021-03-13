@@ -1,4 +1,4 @@
-package processor
+package com.spring.teste.processor
 
 interface PasswordValidatorProcessorInterface {
 

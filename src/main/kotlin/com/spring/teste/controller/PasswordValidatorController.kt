@@ -1,13 +1,10 @@
-package controller
+package com.spring.teste.controller
 
+import com.spring.teste.processor.PasswordValidatorProcessor
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
-import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import processor.PasswordValidatorProcessor
-import java.awt.PageAttributes
-import java.lang.Exception as Exception1
 
 
 @RestController

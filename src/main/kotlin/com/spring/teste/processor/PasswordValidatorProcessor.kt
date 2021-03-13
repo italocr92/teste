@@ -1,9 +1,8 @@
-package processor
+package com.spring.teste.processor
 
-import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
-import services.PasswordValidatorInterface
+import com.spring.teste.services.PasswordValidatorInterface
 import java.util.logging.Logger
 
 @Service
