@@ -10,7 +10,7 @@ class MinimumSpecialCharsValidationServiceTest {
     @ParameterizedTest
     @MethodSource("arguments")
     fun `should return expected result`(minimumSpecialChars: Long, specialChars: String , password: String, expectedResult: Boolean){
-      val minimumSpecialCharsValidationService = MinimumSpecialCharsValidationService(minimumSpecialChars, specialChars.toCharArray())
+      val minimumSpecialCharsValidationService = MinimumSpecialCharsValidationService()
       val result = minimumSpecialCharsValidationService.isValid(password)
 
       assertEquals(expectedResult, result)

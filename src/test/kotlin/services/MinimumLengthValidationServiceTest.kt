@@ -9,8 +9,8 @@ class MinimumLengthValidationServiceTest {
 
     @ParameterizedTest
     @MethodSource("arguments")
-    fun `should return expected result`(minimumLength: Long, password: String, expectedResult: Boolean){
-        val minimumLengthValidationService = MinimumLengthValidationService(minimumLength)
+    fun `should return expected result`(password: String, expectedResult: Boolean){
+        val minimumLengthValidationService = MinimumLengthValidationService()
         val result = minimumLengthValidationService.isValid(password)
 
         assertEquals(expectedResult, result)
@@ -18,8 +18,8 @@ class MinimumLengthValidationServiceTest {
 
     companion object{
         @JvmStatic
-        fun arguments() = listOf(Arguments.of(5, "passw", true),
-        Arguments.of(6, "password", true),
-        Arguments.of(5, "pass", false))
+        fun arguments() = listOf(Arguments.of("passw", true),
+        Arguments.of("password", true),
+        Arguments.of("pass", false))
     }
 }

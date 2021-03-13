@@ -9,8 +9,8 @@ class MinimumLowerCaseValidationServiceTest{
 
     @ParameterizedTest
     @MethodSource("arguments")
-    fun `should return expected result`(minimumLowerCase: Long, password: String, expectedResult: Boolean){
-        val minimumLowerCaseValidationService = MinimumLowerCaseValidationService(minimumLowerCase)
+    fun `should return expected result`(password: String, expectedResult: Boolean){
+        val minimumLowerCaseValidationService = MinimumLowerCaseValidationService()
         val result = minimumLowerCaseValidationService.isValid(password)
 
         assertEquals(expectedResult, result)
@@ -18,7 +18,7 @@ class MinimumLowerCaseValidationServiceTest{
 
     companion object{
         @JvmStatic
-        fun arguments() = listOf(Arguments.of(1, "Password", true),
-            Arguments.of(2, "PASSWORD", false))
+        fun arguments() = listOf(Arguments.of("Password", true),
+            Arguments.of("PASSWORD", false))
     }
 }

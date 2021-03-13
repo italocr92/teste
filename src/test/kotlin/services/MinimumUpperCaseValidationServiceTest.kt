@@ -10,7 +10,7 @@ class MinimumUpperCaseValidationServiceTest {
     @ParameterizedTest
     @MethodSource("arguments")
     fun `should return expcted result`(minimumUpperCase: Long, password: String, expectedResult: Boolean){
-        val minimumUpperCaseValidationService = MinimumUpperCaseValidationService(minimumUpperCase)
+        val minimumUpperCaseValidationService = MinimumUpperCaseValidationService()
         val result = minimumUpperCaseValidationService.isValid(password)
 
         assertEquals(expectedResult, result)
@@ -18,7 +18,7 @@ class MinimumUpperCaseValidationServiceTest {
 
     companion object{
         @JvmStatic
-        fun arguments() = listOf(Arguments.of(1, "Password", true),
-        Arguments.of(1, "password", false))
+        fun arguments() = listOf(Arguments.of("Password", true),
+        Arguments.of("password", false))
     }
 }

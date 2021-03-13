@@ -11,13 +11,10 @@ import java.lang.Exception as Exception1
 
 
 @RestController
-@RequestMapping(path = ["controller"])
+@RequestMapping("/api/controller")
 class PasswordValidatorController @Autowired constructor(private val service: PasswordValidatorProcessor){
 
-    @GetMapping(
-        value = ["validatePassword"],
-        produces = [MediaType.APPLICATION_JSON_VALUE]
-    )
+    @GetMapping(value = ["/{validatePassword}"])
     fun getValidatePassword(@RequestParam("password") password: String): ResponseEntity<Boolean> {
         return try {
             val isValid = service.validate(password)
