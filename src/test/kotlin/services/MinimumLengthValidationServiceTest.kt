@@ -18,8 +18,8 @@ class MinimumLengthValidationServiceTest {
 
     companion object{
         @JvmStatic
-        fun arguments() = listOf(Arguments.of("passw", true),
-        Arguments.of("password", true),
+        fun arguments() = listOf(Arguments.of("valid_password", true),
+        Arguments.of("password2", true),
         Arguments.of("pass", false))
     }
 }

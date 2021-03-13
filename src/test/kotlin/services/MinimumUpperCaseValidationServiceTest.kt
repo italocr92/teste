@@ -9,7 +9,7 @@ class MinimumUpperCaseValidationServiceTest {
 
     @ParameterizedTest
     @MethodSource("arguments")
-    fun `should return expcted result`(minimumUpperCase: Long, password: String, expectedResult: Boolean){
+    fun `should return expcted result`(password: String, expectedResult: Boolean){
         val minimumUpperCaseValidationService = MinimumUpperCaseValidationService()
         val result = minimumUpperCaseValidationService.isValid(password)
 

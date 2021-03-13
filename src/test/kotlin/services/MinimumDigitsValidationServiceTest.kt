@@ -19,6 +19,6 @@ class MinimumDigitsValidationServiceTest{
     companion object{
         @JvmStatic
         fun arguments() = listOf(Arguments.of("password1", true),
-        Arguments.of( "password2", false))
+        Arguments.of( "", false))
     }
 }
