@@ -1,3 +1,5 @@
+package com.spring.teste.controller
+
 import com.spring.teste.controller.PasswordValidatorController
 import com.spring.teste.processor.PasswordValidatorProcessor
 import io.mockk.every

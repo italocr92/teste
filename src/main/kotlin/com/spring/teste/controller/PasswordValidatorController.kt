@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-@RequestMapping("/api/controller")
+@RequestMapping(value = ["controller"])
 class PasswordValidatorController @Autowired constructor(private val service: PasswordValidatorProcessor){
 
-    @GetMapping(value = ["/{validatePassword}"])
+    @GetMapping(value = ["validatePassword"])
     fun getValidatePassword(@RequestParam("password") password: String): ResponseEntity<Boolean> {
         return try {
             val isValid = service.validate(password)

@@ -1,17 +1,38 @@
 package com.spring.teste.processor
 
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
-import com.spring.teste.services.PasswordValidatorInterface
-import java.util.logging.Logger
 
 @Service
-class PasswordValidatorProcessor @Autowired constructor(
-    private val passwordValidatorInterface: List<PasswordValidatorInterface>):
-    PasswordValidatorProcessorInterface {
+class PasswordValidatorProcessor{
 
-    val logger: Logger = Logger.getLogger(javaClass.toString())
+    fun validate(password: String): Boolean{
+         val specialChars = arrayOf('!','@','#','$','%','^','&','*','(',')','_',"+")
 
-    override fun validate(password: String) =
-            passwordValidatorInterface.all{it -> it.isValid(password)}
+        if (password.count { it -> !it.isDigit() } < 1) {
+            return false
+        }
+
+        if (password.length < 9){
+            return false
+        }
+
+        if (password.count { it -> !it.isLowerCase() } < 1){
+            return false
+        }
+
+        val charGroup = password.toCharArray().groupBy { it -> it }
+        if (charGroup.any{it -> it.value.count() > 1})
+        {
+            return false
+        }
+
+        if (password.count { it -> specialChars.contains(it)  } < 1){
+            return false
+        }
+
+        if (password.count { it -> it.isUpperCase() } < 1){
+            return false
+        }
+        return true
+    }
 }
