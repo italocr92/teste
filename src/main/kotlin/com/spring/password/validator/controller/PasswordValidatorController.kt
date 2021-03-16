@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping(value = ["api/password"])
 class PasswordValidatorController @Autowired constructor(private val service: PasswordValidatorProcessor){
 
-    @GetMapping(value = ["validatePassword"])
+    @GetMapping(value = ["validate"])
     fun getValidatePassword(@RequestParam("password") password: String): ResponseEntity<Boolean> {
         return try {
             val isValid = service.validate(password)

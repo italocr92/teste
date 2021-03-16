@@ -17,7 +17,7 @@
 >Started PasswordValidatorApplicationKt in 3.84 seconds (JVM running for 4.666)
 
 -Efetuar a chamada no endpoint abaixo passando a senha desejada.
->localhost:8080/api/password/validatePassword/?password
+>localhost:8080/api/password/validate/?password
 
 
 ### Detalhes sobre a aplicação
@@ -27,7 +27,7 @@
 > É o responsavel por receber a requisição com a senha e tratar a resposta Http conforme o retorno do processor. 
 
 ####Processor
-> É o responsavel pela regra de validação da senha retornando um boolean se a senha é valida com true ou não é valida com false.
+> É o responsavel pela regra de validação da senha retornando um boolean se a senha é valida retorna true ou se a senha não é valida retorna false.
 
 
 
