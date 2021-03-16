@@ -1,4 +1,4 @@
-package com.spring.teste.processor
+package com.spring.password.validator.processor
 
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.BeforeEach

@@ -1,7 +1,7 @@
-package com.spring.teste.controller
+package com.spring.password.validator.controller
 
-import com.spring.teste.controller.PasswordValidatorController
-import com.spring.teste.processor.PasswordValidatorProcessor
+import com.spring.password.validator.controller.PasswordValidatorController
+import com.spring.password.validator.processor.PasswordValidatorProcessor
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.jupiter.api.BeforeEach

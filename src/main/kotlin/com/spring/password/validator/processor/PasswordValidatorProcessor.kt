@@ -1,4 +1,4 @@
-package com.spring.teste.processor
+package com.spring.password.validator.processor
 
 import org.springframework.stereotype.Service
 

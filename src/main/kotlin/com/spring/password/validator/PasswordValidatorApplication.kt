@@ -1,4 +1,4 @@
-package com.spring.teste
+package com.spring.password.validator
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
