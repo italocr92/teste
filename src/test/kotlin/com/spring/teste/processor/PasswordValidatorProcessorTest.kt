@@ -1,6 +1,5 @@
-package processor
+package com.spring.teste.processor
 
-import com.spring.teste.processor.PasswordValidatorProcessor
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.BeforeEach
 import kotlin.test.Test

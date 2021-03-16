@@ -15,9 +15,9 @@ class PasswordValidatorController @Autowired constructor(private val service: Pa
     fun getValidatePassword(@RequestParam("password") password: String): ResponseEntity<Boolean> {
         return try {
             val isValid = service.validate(password)
-            ResponseEntity(isValid, if (!isValid) HttpStatus.BAD_REQUEST else HttpStatus.OK)
+            ResponseEntity(isValid, if (!isValid) HttpStatus.INTERNAL_SERVER_ERROR else HttpStatus.OK)
         } catch (e: Exception){
-            ResponseEntity.status(HttpStatus.BAD_REQUEST).build()
+            ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
         }
     }
 }
