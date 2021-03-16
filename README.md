@@ -2,7 +2,7 @@
 
 ### 🛠 Tecnologias
 
-- Java 11.
+- JDK 11.
 - Build: Gradle 2.4.3.
 - Kotlin.
 ### Fluxo
